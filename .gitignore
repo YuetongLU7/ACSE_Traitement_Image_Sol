@@ -3,3 +3,15 @@
 
 # Examples
 *Example*
+
+# Images
+*.jpg
+*.JPG
+*.jpeg
+*.jpe
+*.jif
+*.jfif
+*.jfi
+
+# Cuda
+*.deb
