@@ -13,5 +13,12 @@
 *.jfif
 *.jfi
 
+# Jupyter
+.ipynb_checkpoints*
+
 # Cuda
 *.deb
+
+# Bibliographie
+*.pdf
+biblio*
