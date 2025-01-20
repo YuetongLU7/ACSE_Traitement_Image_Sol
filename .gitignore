@@ -22,3 +22,6 @@
 # Bibliographie
 *.pdf
 biblio*
+
+# Report
+*.odt
