@@ -1,6 +1,9 @@
 # Python Virtual Environment
 .venv*
 
+# Python Cache
+*_pycache_*
+
 # Examples
 *Example*
 
