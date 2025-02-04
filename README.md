@@ -1,7 +1,10 @@
 # Analyse Automatisée des Fragments Rocheux dans les Profils de Sol
 
 ## Description
-Ce projet implémente une application de traitement d'image pour l'analyse automatisée des profils de sol. Il utilise des algorithmes de traitement d'image classiques afin de détecter et quantifier les fragments rocheux visibles sur des images de profils. L'objectif est d'automatiser cette tâche de manière objective et reproductible, en remédiant à l'absence de données massives pour entraîner des modèles d'intelligence artificielle.
+Ce projet est une collaboration entre les Mines de Nancy, l'ENSAIA et la Chambre d'Agriculture Grand-Est. Il vise à implémenter une application de traitement d'image pour l'analyse automatisée des profils de sol. 
+
+Pour le moment seul un algorithme de traitement de détection et de quantification des fragments rocheux visibles sur les images de profils est implémenté. 
+L'objectif de ce programme est d'automatiser l'annotation des images de la base de données pour pouvoir ensuite entraîner un réseaux de neurone convolutif de segmentation d'image.
 
 Les principales fonctionnalités comprennent :
 - Prétraitement des images (suppression des ombres, filtrage).
@@ -70,6 +73,3 @@ La densité des éléments grossiers sur le profil est 12.45%
 - Optimiser la combinaison des masques dans la fonction `post_segmentation`.
 - Ajouter une détection automatisée de la zone exacte du profil.
 - Intégrer une interface graphique pour une utilisation plus conviviale.
-
-## Contributions
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir des issues ou à soumettre des pull requests.
