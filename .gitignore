@@ -4,10 +4,10 @@
 # Python Cache
 *_pycache_*
 
-# Examples
+# Exemples
 *Example*
 
-# Images
+# Images, pour éviter de rende la base de données du client publique
 *.jpg
 *.JPG
 *.jpeg
