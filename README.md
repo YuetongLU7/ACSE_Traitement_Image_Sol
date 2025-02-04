@@ -12,16 +12,16 @@ Les principales fonctionnalités comprennent :
 ```
 root/
 ├── main.py                      # Script principal pour l'analyse d'une image
-├── elements_grossiers.py         # Implémentation des fonctions de détection des fragments rocheux
-├── README.md                     # Documentation du projet
-├── requirements.txt              # Dépendances nécessaires
-└── images/                       # Dossier pour les images d'entrée
+├── elements_grossiers.py        # Implémentation des fonctions de détection des fragments rocheux
+├── README.md                    # Documentation du projet
+├── requirements.txt             # Dépendances nécessaires
+└── images/                      # Dossier pour les images d'entrée
 ```
 
 ## Installation
 1. **Cloner le dépôt**
 ```bash
-git clone https://github.com/votre-repo.git
+git clone https://github.com/Jidoex/Projet3A.git
 cd votre-repo
 ```
 
