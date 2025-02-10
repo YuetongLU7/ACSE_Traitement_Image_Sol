@@ -15,6 +15,7 @@
 *.jif
 *.jfif
 *.jfi
+*.png
 
 # Jupyter
 .ipynb_checkpoints*
@@ -22,9 +23,11 @@
 # Cuda
 *.deb
 
-# Bibliographie
+# Bibliographie et Document
 *.pdf
 biblio*
+*.docx
+*.odt
 
 # Report
 *.odt
