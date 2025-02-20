@@ -1,3 +1,4 @@
+import os
 from elements_grossiers import *
 
 # Emplacement de l'image à analyser en mémoire
@@ -19,21 +20,23 @@ def density(profile_mask: MatLike, element_mask: MatLike) -> float:
     return element_count / profile_count
 
 if __name__ == "__main__":
-    # Lecture de l'image au format BGR
-    image_bgr = cv2.imread(image_path)
-    if image_bgr is None:
-        print(f"Erreur : Impossible de charger l'image à l'emplacement {image_path}")
-        exit(1)
 
-    # Conversion de l'image vers le format HSV
-    image_hsv = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2HSV)
+    images_path = os.getcwd() + "/images"
 
-    rock_final_mask = get_rock_frag_mask(image_hsv)
+    for _, _, files in os.walk(images_path):
+        for file in files:
+            if file.endswith('.jpg') or file.endswith('.JPG'):
+                image_path = os.path.join(images_path, file)
+                image_bgr = cv2.imread(image_path)
+                image_hsv = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2HSV)
 
-    print("Segmentation finie.\n")
+                rock_final_mask = get_rock_frag_mask(image_hsv) # save it after that
+                profile_mask: MatLike = np.full(rock_final_mask.shape, True, dtype=bool)
 
-    # Pour le moment on utilise un postiche pour le masque délimitant le plan du profil
-    profile_mask: MatLike = np.full(rock_final_mask.shape, True, dtype=bool)
+                rock_density = (density(profile_mask, rock_final_mask) * 100.0) # en %
 
-    rock_density = (density(profile_mask, rock_final_mask) * 100.0) # en %
-    print(f'La densité des éléments grossiers sur le profil est {rock_density:.2f}%')
+                print(f'{file} : {rock_density:.2f}%')
+
+                bool_to_int = np.vectorize(lambda b: 255 if b else 0)
+                rock_final_mask = bool_to_int(rock_final_mask)
+                cv2.imwrite(images_path + '/' + file.split('.')[0] + '_mask.jpg', rock_final_mask)
